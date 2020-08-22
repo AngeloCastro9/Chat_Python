@@ -10,4 +10,4 @@ In cmd/terminal:
 
 **How to close the connection?**
 
-Send a message with the message "bye"
+send a message with the text "bye"
