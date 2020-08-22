@@ -9,4 +9,5 @@ In cmd/terminal:
 - > python client.py
 
 **How to close the connection?**
+
 Send a message with the message "bye"
