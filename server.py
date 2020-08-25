@@ -13,7 +13,7 @@ serv_socket.bind(myAddress)
 serv_socket.listen(10)
 print('Waiting connection')
 con, cliente = serv_socket.accept()
-print('connected' )
+print('Connected' )
 
 sendPort = 7001
 otherAddress = ('127.0.0.2', sendPort)
@@ -36,17 +36,17 @@ while loopMessage:
     print( clientName + " at " + time + ": " + receive.decode("utf-8") )
 
     if receive.decode("utf-8") == "bye" or receive.decode("utf-8") == "Bye":
-        print("your connection is closed because " + clientName + " sent 'Bye'")
+        print("Your connection is closed because " + clientName + " sent 'Bye'")
         serv_socket.close()
         clientSocket.close()
         loopMessage = False
 
     else:
-        message = input("I: ")
+        message = input("Me: ")
         clientSocket.send(message.encode('utf-8'))
 
         if(message == "Bye" or message == "bye"):
-            print("your connection is closed.")
+            print("Your connection is closed.")
             serv_socket.close()
             clientSocket.close()
             loopMessage = False

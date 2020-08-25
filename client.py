@@ -28,11 +28,11 @@ clientName = con.recv(1024).decode("utf-8")
 loopMessage = True
 while loopMessage:
     
-    message = input("I: ")
+    message = input("Me: ")
     clientSocket.send(message.encode('utf-8'))
 
     if(message == "Bye" or message == "bye"):
-        print("your connection is closed.")
+        print("Your connection is closed.")
         serv_socket.close()
         clientSocket.close()
         loopMessage = False
@@ -44,7 +44,7 @@ while loopMessage:
         print( clientName + "at" + time + ": " + receive.decode("utf-8") )
 
         if receive.decode("utf-8") == "bye" or receive.decode("utf-8") == "Bye":
-            print("your connection is closed because " + clientName + " sent 'Bye'")
+            print("Your connection is closed because " + clientName + " sent 'Bye'")
             serv_socket.close()
             clientSocket.close()
             loopMessage = False
